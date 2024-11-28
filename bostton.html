@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSTON TEAM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<style>
+  
+body {
+  background-color: rgb(5, 75, 75);
+  color: #ecf0f1;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+  .team-grid {
+  color:#313437;
+  background-color: rgb(5, 75, 75);
+}
+
+.team-grid p {
+  color:#7d8285;
+}
+
+.team-grid h2 {
+  font-weight:bold;
+  margin-bottom:40px;
+  padding-top:40px;
+  color:inherit;
+}
+
+@media (max-width:767px) {
+  .team-grid h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
+}
+
+.team-grid .intro {
+  font-size:16px;
+  max-width:500px;
+  margin:0 auto;
+}
+
+.team-grid .intro p {
+  margin-bottom:0;
+}
+
+.team-grid .people {
+  padding:50px 0;
+}
+
+.team-grid .item {
+  margin-bottom:30px;
+}
+
+.team-grid .item .box {
+  text-align:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  height:280px;
+  position:relative;
+  overflow:hidden;
+}
+
+.team-grid .item .cover {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(31,148,255,0.75);
+  transition:opacity 0.15s ease-in;
+  opacity:0;
+  padding-top:80px;
+  color:#fff;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.15);
+}
+
+.team-grid .item:hover .cover {
+  opacity:1;
+}
+
+.team-grid .item .name {
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.team-grid .item .title {
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#bbd8fb;
+  letter-spacing:2px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.team-grid .social {
+  font-size:18px;
+}
+
+.team-grid .social a {
+  color:inherit;
+  margin:0 10px;
+  display:inline-block;
+  opacity:0.7;
+}
+
+.team-grid .social a:hover {
+  opacity:1;
+}
+/* Navbar Section */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #1e293b, #374151);
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+/* Logo Section */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.navbar .logo img {
+    margin-left: 10px;
+    height: 50px;
+}
+
+/* Navigation Links */
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes links wrap on smaller screens */
+    justify-content: center;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #007bff;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Auth Links (Sign In / League Pass) */
+.navbar .auth-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar .auth-links a {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.navbar .auth-links a:first-child {
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+
+.navbar .auth-links a:first-child:hover {
+    background: white;
+    color: #1e293b;
+}
+
+.navbar .auth-links a.btn-primary {
+    background: #007bff;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.navbar .auth-links a.btn-primary:hover {
+    background: #0056b3;
+    box-shadow: 0 4px 6px rgba(0, 86, 179, 0.5);
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 1024px) {
+    .navbar .nav-links a {
+        font-size: 14px;
+    }
+
+    .navbar .auth-links a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stacks content for smaller screens */
+        align-items: center;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar .nav-links {
+        gap: 15px;
+    }
+
+    .navbar .auth-links {
+        margin-top: 10px;
+    }
+
+    .navbar .auth-links a {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 12px;
+    }
+
+    .navbar .auth-links a {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+}
+/* neon animation */
+h1{
+  color: white;
+  text-shadow: 
+  0 0 10px cyan,
+  0 0 20px cyan,
+  0 0 30px cyan,
+  0 0 40px cyan,
+  0 0 50px cyan;
+}
+
+</style>
+
+<body>
+  <!-- Navbar Section -->
+  <header class="navbar">
+    <div class="logo">NBA
+    <img src="./img/hob.png" class="logo" height="50px" alt="Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+      
+      <a href="skills.html">Skills</a>
+      <a href="about.html">About</a>
+     <a href="../PHP/user.php">Users</a>
+    </nav>
+    <div class="auth-links">
+      <a href="../PHP/index0.php">Sign In</a>
+      <a href="https://www.nba.com/league-pass-purchase?gclid=EAIaIQobChMIxYXo5Oj4iQMVPKRmAh1W6jq2EAAYASAAEgKf_fD_BwE&cid=nba:paid:sem:pmax:ilp:lpsub:int:other:t-dtcacq:mtlr-1351_4:FY25_G_PMax_ROW_English::::&utm_medium=paid_search&utm_source=pmax_na&utm_campaign=international-league-pass_lp-subscription&utm_content=nba:paid:sem:pmax:ilp:lpsub:int:other:t-dtcacq:mtlr-1351_4:FY25_G_PMax_ROW_English::::&ef_id=EAIaIQobChMIxYXo5Oj4iQMVPKRmAh1W6jq2EAAYASAAEgKf_fD_BwE:G:s&s_kwcid=AL!5120!3!!!!x!!!21801898709!&gclsrc=aw.ds&gad_source=1 " class="btn btn-primary">League Pass</a>
+    </div>
+  </header>
+    <div class="team-grid">
+        <div class="container">
+            <div class="intro">
+                <h1 class="text-center">TEAMS</h1>
+                <p class="text-center">BOSTON CELTICS.  </p>
+            </div>
+            <div class="row people">
+                <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image:url(https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTNRpX90e7cj8KS8Bshk812vNuRXgRHq1m6nIlXo-uKyc9XJpfiJ8MgHsXL_PRpJlXeiZ4puoWr86WK5Wg)">
+                        <div class="cover">
+                            <h3 class="name">JAYSON TATUM</h3>
+                            <p class="title">#0|FORWARD-GUARD</p>
+                            <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image:url(https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSP7buEKW1VoIGtUUqZQU16ZaxiqJzS5yn7DiMRT9qUbsXjTmo8W74iH8D0wuz05Jp5rBGpFG7yJ-9h6U4)">
+                        <div class="cover">
+                            <h3 class="name">JAYLEN BROWN</h3>
+                            <p class="title">#7|GAURD-FORWARD </p>
+                            <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1630573.png)">
+                        <div class="cover">
+                            <h3 class="name">SAM HAUSER</h3>
+                            <p class="title">#30|FORWARD </p>
+                            <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image:url(https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSjHc0iMHscGrw1N7ZcagFWUxCSee7kUu5mrZgegYZNSMmJU91f85ppctnPwxzUZ9itOH9-my4SUIWmDe0)">
+                        <div class="cover">
+                            <h3 class="name">AL HORFORD</h3>
+                            <p class="title">#42|CENTER-FORWARD </p>
+                            <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3 item">
+                  <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1641809.png)">
+                      <div class="cover">
+                          <h3 class="name">DREW PETERSON</h3>
+                          <p class="title">#13|FORWARD </p>
+                          <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 col-lg-3 item">
+                <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1630202.png)">
+                    <div class="cover">
+                        <h3 class="name">PYTHON PRITCHARD</h3>
+                        <p class="title">#11|GUARD </p>
+                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 item">
+              <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1631248.png)">
+                  <div class="cover">
+                      <h3 class="name"> BAYLOR SCHEIERMAN</h3>
+                      <p class="title">#55|GUARD </p>
+                      <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 col-lg-3 item">
+            <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1641775.png)">
+                <div class="cover">
+                    <h3 class="name">JORDAN WALSH</h3>
+                    <p class="title">#27|GUARD </p>
+                    <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-3 item">
+          <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1628401.png)">
+              <div class="cover">
+                  <h3 class="name">DERRICK WHITE</h3>
+                  <p class="title">#13|FORWARD </p>
+                  <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-lg-3 item">
+        <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1631120.png)">
+            <div class="cover">
+                <h3 class="name">JD DAVISON</h3>
+                <p class="title">#20|GUARD </p>
+                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-3 item">
+      <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/201950.png)">
+          <div class="cover">
+              <h3 class="name">JRUE HOLIDAY</h3>
+              <p class="title">#4|GUARD </p>
+              <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-md-4 col-lg-3 item">
+    <div class="box" style="background-image:url(https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3064560.png&w=350&h=254)">
+        <div class="cover">
+            <h3 class="name">LUKE KORNET</h3>
+            <p class="title">#40|CENTER-FORWARD</p>
+            <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-lg-3 item">
+  <div class="box" style="background-image:url(https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3102531.png&w=350&h=254)">
+      <div class="cover">
+          <h3 class="name">KRISTAPS PORZINGIS</h3>
+          <p class="title">#8|FORWARD-CENTER </p>
+          <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+      </div>
+  </div>
+</div>
+
+<div class="col-md-4 col-lg-3 item">
+  <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1629674.png)">
+      <div class="cover">
+          <h3 class="name">NIMIAS QEUTA</h3>
+          <p class="title">#88|CENTER </p>
+          <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+      </div>
+  </div>
+</div>
+
+<div class="col-md-4 col-lg-3 item">
+  <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1630531.png)">
+      <div class="cover">
+          <h3 class="name">JADEN SPRINGER</h3>
+          <p class="title">#44|GUARD </p>
+          <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+      </div>
+  </div>
+</div>
+<div class="col-md-4 col-lg-3 item">
+  <div class="box" style="background-image:url(https://cdn.nba.com/headshots/nba/latest/1040x760/1630214.png)">
+      <div class="cover">
+          <h3 class="name">XIAVER TILLMAN</h3>
+          <p class="title">#26|FORWARD </p>
+          <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+      </div>
+  </div>
+</div>
+<div class="col-md-4 col-lg-3 item">
+  <div class="box" style="background-image:url(https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4431705.png&w=350&h=254)">
+      <div class="cover">
+          <h3 class="name">ANTON WATSON</h3>
+          <p class="title">#28|FORWARD </p>
+          <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+      <div class="container ">
+          <div class="row">
+              <div class="col-md-4">
+                  <h5>About Us</h5>
+                  <p>Providing quality services to the users.</p>
+              </div>
+              <div class="col-md-4">
+                  <h5>Quick Links</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="index.html" class="text-white">Home</a></li>
+                      <li><a href="about.html" class="text-white">About</a></li>
+                      
+                      <li><a href="contact.html" class="text-white">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <h5>Follow Us</h5>
+                  <a href="#" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#" class="text-white me-3"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="#" class="text-white me-3"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" class="text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+          </div>
+          <hr class="my-4">
+          <p class="mb-0">© 2024 HOBBY WEBPAGE. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
